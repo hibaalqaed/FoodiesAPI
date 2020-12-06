@@ -56,13 +56,13 @@ db.Ingredient.belongsTo(db.Category, {
 });
 
 // A Recipe has many Ingredients
-db.Recipe.hasMany(db.Ingredient, {
+db.Recipe.belongsToMany(db.Ingredient, {
   as: "ingredients",
   foreignKey: { fieldName: "recipeId", allowNull: false },
 });
 
 // An Ingredient belongs to many Recipes
-db.Ingredient.hasMany(db.Recipe, {
+db.Ingredient.belongsToMany(db.Recipe, {
   as: "recipes",
   foreignKey: { fieldName: "ingredientId", allowNull: false },
 });
