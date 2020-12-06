@@ -55,16 +55,16 @@ db.Ingredient.belongsTo(db.Category, {
   as: "categories",
 });
 
-// A Recipe has many Ingredients
-db.Recipe.belongsToMany(db.Ingredient, {
-  as: "ingredients",
-  foreignKey: { fieldName: "recipeId", allowNull: false },
-});
+// // A Recipe has many Ingredients
+// db.Recipe.belongsToMany(db.Ingredient, {
+//   as: "ingredients",
+//   foreignKey: { fieldName: "recipeId", allowNull: false },
+// });
 
-// An Ingredient belongs to many Recipes
-db.Ingredient.belongsToMany(db.Recipe, {
-  as: "recipes",
-  foreignKey: { fieldName: "ingredientId", allowNull: false },
-});
+// // An Ingredient belongs to many Recipes
+// db.Ingredient.belongsToMany(db.Recipe, {
+//   as: "recipes",
+//   foreignKey: { fieldName: "ingredientId", allowNull: false },
+// });
 
 module.exports = db;

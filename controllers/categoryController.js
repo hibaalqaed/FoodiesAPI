@@ -39,6 +39,7 @@ exports.ingredientCreate = async (req, res, next) => {
       req.body.image = `http://${req.get("host")}/media/${req.file.filename}`;
     }
     req.body.categoryId = req.params.categoryId;
+    req.body.categoriesId = req.body.categoryId;
     const newIngredient = await Ingredient.create(req.body);
     res.status(201).json(newIngredient);
   } catch (error) {
