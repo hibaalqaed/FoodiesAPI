@@ -55,6 +55,17 @@ db.Ingredient.belongsTo(db.Category, {
   as: "categories",
 });
 
+//An Ingredient has many recipes
+//Liala said to check if this work then go with many to many so Im checking
+db.Ingredient.hasMany(db.Recipe, {
+  as: "recipes",
+  foreignKey: { fieldName: "recipeId" },
+});
+
+db.Recipe.belongsTo(db.Ingredient, {
+  as: "ingredients",
+});
+
 // // A Recipe has many Ingredients
 // db.Recipe.belongsToMany(db.Ingredient, {
 //   as: "ingredients",
